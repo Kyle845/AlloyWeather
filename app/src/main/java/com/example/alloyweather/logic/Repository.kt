@@ -2,6 +2,7 @@ package com.example.alloyweather.logic
 
 import android.util.Log
 import androidx.lifecycle.liveData
+import com.example.alloyweather.logic.dao.PlaceDao
 import com.example.alloyweather.logic.model.Place
 import com.example.alloyweather.logic.model.Weather
 import com.example.alloyweather.logic.network.AlloyWeatherNetwork
@@ -52,4 +53,10 @@ object Repository {
         }
         emit(result)
     }
+
+    fun savePlace(place: Place) = PlaceDao.savePlace(place)
+
+    fun getSavedPlace() = PlaceDao.getSavedPlace()
+
+    fun isPlaceSaved() = PlaceDao.isPlaceSaved()
 }
